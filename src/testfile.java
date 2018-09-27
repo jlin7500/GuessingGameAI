@@ -7,23 +7,35 @@ public class testfile {
         //double computerGuess = Math.random();
         //int computerGuessInt = (int)computerGuess;
         System.out.println("Choose a number from 0 - 100 and I will try to guess it");
+        System.out.println("If the guess is wrong, type 'higher'(case sensitive) if its higher and 'lower'(case sensitive) if its lower");
         Scanner input = new Scanner(System.in);
-        int playerGuess = input.nextInt();
-        Random computerGuess = new Random();
-        int computerGuessInt = computerGuess.nextInt(101);
-        while(computerGuessInt != playerGuess)
+        //double computerNumber = Math.random()*100;
+        //int computerGuessInt = (int)computerNumber;
+        //System.out.println(computerGuessInt);
+        int computerGuessInt = 100;
+        int playerNumber =input.nextInt();
+        System.out.println("Is 50 your number?");
+        while(computerGuessInt != playerNumber)
         {
-            String answer = input.nextLine();
-            if(answer.equals("yes"))
+            String higher = input.nextLine();
+            int computerGuess = computerGuessInt/2;
+            if(higher.equals("higher"))
             {
-                System.out.println("it works");
-                return;
+                int computerGuess2 = computerGuess/2 + 50;
+                System.out.println("Is" + " " + computerGuess2 + " " + "your number?");
             }
-            computerGuess = new Random();
-            computerGuessInt = computerGuess.nextInt(101);
-            System.out.println("Is" + " " + computerGuessInt + " " + "Your number");
-            System.out.println("If no, type 'higher' if its higher and 'lower' if its lower");
+
+
         }
-        //String higherOrLower = input.nextLine();
+        String answer = input.nextLine();
+        if(answer.equals("yes"))
+        {
+            System.out.println("it works");
+            return;
+        }
+        else
+        {
+            System.out.println("Don't lie please");
+        }
     }
 }
